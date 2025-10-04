@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.pnp*
+.pnpm-debug.log
+
+# Next.js
+.next/
+.out/
+dist/
+build/
+.turbo/
+.vercel/
+
+# Tests and coverage
+coverage/
+.tmp/
+tmp/
+
+# OS and editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
