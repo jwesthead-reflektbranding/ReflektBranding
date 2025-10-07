@@ -20,12 +20,12 @@ export default function PrivacyPolicyPage() {
         <section className="legal-section" aria-labelledby="privacy-introduction">
           <h2 id="privacy-introduction">1. Introduction</h2>
           <p>
-            Reflekt Branding ("we," "us," "our") respects your privacy. This Privacy Policy explains how we collect, use, and
-            protect information when you visit{' '}
+            Reflekt Branding (we, us, our) respects your privacy. This Privacy Policy explains how we collect, use, and protect
+            information when you visit{' '}
             <a href="https://www.reflektbranding.com" rel="noopener noreferrer" target="_blank">
               www.reflektbranding.com
             </a>{' '}
-            ("the Site"). By using the Site, you agree to this policy.
+            (the Site). By using the Site, you agree to this policy.
           </p>
         </section>
 

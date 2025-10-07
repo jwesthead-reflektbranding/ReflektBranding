@@ -50,23 +50,6 @@ const serviceSuites = [
 const inquiryMailto =
   'mailto:team@reflektbranding.com?subject=Reflekt%20Branding%20Customer%20Inquiry&body=Thank%20you%20for%20your%20interest%20in%20Reflekt%20Branding.%20Tell%20us%20a%20little%20about%20who%20you%20are%20and%20a%20little%20about%20your%20project%20request.%20We%20will%20be%20in%20touch%20soon!'
 
-const productSpotlights = [
-  {
-    name: 'Atmos Suite',
-    status: 'Coming soon',
-    description: 'Modular scent, light, and media modules that snap into retail footprints for instantly branded experiences.',
-    cta: 'Join the waitlist',
-    href: inquiryMailto
-  },
-  {
-    name: 'Pulse OS',
-    status: 'In development',
-    description: 'A control platform that synchronizes live data, performer cues, and environmental storytelling in one interface.',
-    cta: 'Request early access',
-    href: inquiryMailto
-  }
-]
-
 const brandInsights = [
   'Brand Recognition & Awareness',
   'It takes 5–7 impressions for people to remember a brand.',

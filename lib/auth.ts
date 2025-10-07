@@ -65,7 +65,7 @@ export function verifySessionToken(token: string): SessionPayload | null {
 
   try {
     payloadData = JSON.parse(base64UrlDecode(payload))
-  } catch (error) {
+  } catch {
     return null
   }
 

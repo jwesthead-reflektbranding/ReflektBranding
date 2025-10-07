@@ -24,7 +24,7 @@ export default function TermsOfServicePage() {
             <a href="https://www.reflektbranding.com" rel="noopener noreferrer" target="_blank">
               www.reflektbranding.com
             </a>{' '}
-            ("the Site"), you agree to comply with and be bound by these Terms of Service ("Terms"). If you do not agree, you should not
+            (the Site), you agree to comply with and be bound by these Terms of Service (the Terms). If you do not agree, you should not
             use this Site.
           </p>
         </section>
@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
         <section className="legal-section" aria-labelledby="terms-overview">
           <h2 id="terms-overview">2. Company Overview</h2>
           <p>
-            Reflekt Branding ("we," "us," "our") provides branding, design, and marketing services to businesses across the United
+            Reflekt Branding (we, us, our) provides branding, design, and marketing services to businesses across the United
             States. Our Site serves as an informational and contact platform for potential and current clients.
           </p>
         </section>

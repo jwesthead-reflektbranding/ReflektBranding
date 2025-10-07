@@ -47,7 +47,7 @@ export async function getLatestPosts(count = 3): Promise<BlogPost[]> {
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   try {
     return await readPostFile(slug)
-  } catch (err) {
+  } catch {
     return null
   }
 }
