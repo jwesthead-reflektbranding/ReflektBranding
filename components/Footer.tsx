@@ -56,7 +56,7 @@ export default function Footer() {
           </p>
           <div className="footer-contact">
             <Link href="mailto:team@reflektbranding.com">team@reflektbranding.com</Link>
-            <span>Mon – Fri · 9a – 6p EST</span>
+            <span>Mon – Fri · 8a – 5p EST</span>
             <span>Indianapolis, IN</span>
           </div>
         </div>

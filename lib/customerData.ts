@@ -81,6 +81,75 @@ export const customers: CustomerRecord[] = [
         items: [{ productId: 'merch-bundle', quantity: 120 }]
       }
     ]
+  },
+  {
+    username: 'reflektbranding',
+    displayName: 'Reflekt Branding',
+    salt: 'c35be1d11f7eb8d1c9260f5d72e7b22a',
+    passwordHash: createPasswordHash('Reflekt', 'c35be1d11f7eb8d1c9260f5d72e7b22a'),
+    products: [
+      {
+        id: 'brand-launch-kit',
+        name: 'Brand Launch Experience Kit',
+        sku: 'RB-KIT-201',
+        inventory: 36,
+        reorderPoint: 20
+      },
+      {
+        id: 'executive-pitch-deck',
+        name: 'Executive Pitch Deck Bundle',
+        sku: 'RB-DECK-044',
+        inventory: 14,
+        reorderPoint: 10
+      },
+      {
+        id: 'immersive-booth',
+        name: 'Immersive Trade Booth Graphics Pack',
+        sku: 'RB-BOOTH-310',
+        inventory: 8,
+        reorderPoint: 6
+      },
+      {
+        id: 'vehicle-wrap-prototype',
+        name: 'Vehicle Wrap Prototype Set',
+        sku: 'RB-WRAP-118',
+        inventory: 4,
+        reorderPoint: 4
+      },
+      {
+        id: 'digital-social-kit',
+        name: 'Digital + Social Launch Kit',
+        sku: 'RB-SOC-502',
+        inventory: 68,
+        reorderPoint: 40
+      }
+    ],
+    recentOrders: [
+      {
+        id: 'RB-PO-2201',
+        date: '2024-08-12',
+        status: 'Fulfilled',
+        items: [
+          { productId: 'brand-launch-kit', quantity: 20 },
+          { productId: 'digital-social-kit', quantity: 40 }
+        ]
+      },
+      {
+        id: 'RB-PO-2209',
+        date: '2024-09-04',
+        status: 'In Production',
+        items: [
+          { productId: 'immersive-booth', quantity: 2 },
+          { productId: 'executive-pitch-deck', quantity: 6 }
+        ]
+      },
+      {
+        id: 'RB-PO-2215',
+        date: '2024-09-18',
+        status: 'Submitted',
+        items: [{ productId: 'vehicle-wrap-prototype', quantity: 3 }]
+      }
+    ]
   }
 ]
 

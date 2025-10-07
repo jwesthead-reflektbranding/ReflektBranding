@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { products } from '@/lib/products'
+import { getAuthenticatedCustomer } from '@/lib/session'
 
 type NavigationItem = {
   label: string
@@ -29,12 +30,11 @@ type SiteHeaderProps = {
 }
 
 export default function SiteHeader({ cta = true }: SiteHeaderProps) {
+  const customer = getAuthenticatedCustomer()
+
   return (
     <header className="site-header" id="reflekt">
-      <div
-        className="container"
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 0' }}
-      >
+      <div className="container site-header-inner">
         <Link
           href="/"
           aria-label="Reflekt home"
@@ -77,9 +77,20 @@ export default function SiteHeader({ cta = true }: SiteHeaderProps) {
               Begin a project
             </Link>
           ) : null}
-          <Link href="/portal/login" className="site-header-portal">
-            Client portal
-          </Link>
+          {customer ? (
+            <div className="site-header-session-group">
+              <span className="site-header-session">
+                Signed in as <strong>{customer.displayName}</strong>
+              </span>
+              <Link href="/portal" className="site-header-portal">
+                Portal dashboard
+              </Link>
+            </div>
+          ) : (
+            <Link href="/portal/login" className="site-header-portal">
+              Client portal
+            </Link>
+          )}
         </div>
       </div>
     </header>
