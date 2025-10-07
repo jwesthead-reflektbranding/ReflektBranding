@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -55,7 +56,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </h1>
           {post.heroImage ? (
             <div className="blog-hero">
-              <img src={post.heroImage} alt={post.title} className="blog-hero-img" />
+              <Image
+                src={post.heroImage}
+                alt={post.title}
+                className="blog-hero-img"
+                width={1600}
+                height={900}
+                sizes="(max-width: 768px) 100vw, 820px"
+              />
             </div>
           ) : null}
         </header>

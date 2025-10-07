@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 
 import ExecutiveCard, { type Executive } from '@/components/ExecutiveCard'
 import type { BlogPost } from '@/lib/blog'
@@ -289,7 +289,7 @@ export default function Home() {
     }
   }, [insightsItems])
 
-  const resetTestimonialAutoplay = () => {
+  const resetTestimonialAutoplay = useCallback(() => {
     if (testimonialIntervalRef.current !== null) {
       window.clearInterval(testimonialIntervalRef.current)
       testimonialIntervalRef.current = null
@@ -298,7 +298,7 @@ export default function Home() {
     testimonialIntervalRef.current = window.setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonialSlides.length)
     }, 6000)
-  }
+  }, [testimonialSlides.length])
 
   const nextTestimonial = () => {
     resetTestimonialAutoplay()
@@ -319,7 +319,7 @@ export default function Home() {
         testimonialIntervalRef.current = null
       }
     }
-  }, [testimonialSlides.length])
+  }, [resetTestimonialAutoplay])
 
   return (
     <>
