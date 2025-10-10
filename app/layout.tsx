@@ -10,12 +10,14 @@ const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Reflekt Branding - Home',
-    template: 'Reflekt Branding - %s'
+    default: 'Reflekt Branding | Immersive Brand Experiences',
+    template: 'Reflekt Branding | %s'
   },
   description: 'Reflekt crafts immersive brand experiences that feel impossibly polished and effortlessly human.',
   icons: {
-    icon: '/favicon.svg'
+    icon: [{ url: '/reflekt-icon.png', type: 'image/png' }],
+    shortcut: ['/reflekt-icon.png'],
+    apple: [{ url: '/reflekt-icon.png' }]
   }
 }
 
