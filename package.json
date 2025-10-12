@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,12 +13,14 @@
     "gray-matter": "^4.0.3",
     "next": "^14.2.5",
     "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
+    "@types/nodemailer": "^7.0.2",
     "@types/react": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.5",
