@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server'
 
 import { getSessionCookieName } from '@/lib/auth'
 
-export async function POST(request: Request) {
-  const response = NextResponse.redirect(new URL('/', request.url))
+export async function POST() {
+  const response = NextResponse.redirect('https://www.reflektbranding.com/', { status: 303 })
 
   response.cookies.set({
     name: getSessionCookieName(),
