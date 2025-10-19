@@ -384,7 +384,11 @@ export default function Home() {
                 </div>
                 <div className="hero-stat">
                   <h3>End-to-End</h3>
-                  <p>Strategy, design, production, installation, and care.</p>
+                  <p>
+                    From strategy to installation — we handle your signage, vehicles, exhibits,
+                    <br />
+                    so you don’t juggle vendors.
+                  </p>
                 </div>
               </div>
             </div>
