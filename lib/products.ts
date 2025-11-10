@@ -200,6 +200,39 @@ export const products: Product[] = [
     ]
   },
   {
+    slug: '3d-printing',
+    name: '3D Printing',
+    caption: 'Custom dimensional promos that feel like premium keepsakes.',
+    excerpt:
+      'Deliver awards, VIP giveaways, and tactile brand pieces that stand out on desks and displays—plus the prototypes needed to prove them in advance.',
+    heroCopy:
+      'Our industrial printers and finishing bench create production-quality 3D items with your logos dialed in for unforgettable promo drops or swag.',
+    image: '/products/3d-printing.png',
+    imageAlt: 'Custom 3D printed promotional items produced by Reflekt',
+    sections: [
+      {
+        title: 'Signature Promo Pieces',
+        body:
+          'Awards, launch mailers, tabletop displays, and dimensional swag are produced at any quantity so you can wow VIPs, sales prospects, or teams with something they have never seen before.'
+      },
+      {
+        title: 'Material & Finish Flexibility',
+        body:
+          'Engineering resins, reinforced nylons, and composite blends are paired with sanding, priming, paint, and plating that match your specified Pantones or material callouts.',
+        bullets: [
+          'Textured, satin, or gloss finishing options',
+          'Color-matched coatings and decals',
+          'Hardware inserts, magnets, and lighting integration'
+        ]
+      },
+      {
+        title: 'Kitting & Fulfillment',
+        body:
+          'We batch, QC, and package every piece with protective inserts, custom boxes, and labeling for mailers or event distribution—plus pre-run prototypes for approvals when you need them.'
+      }
+    ]
+  },
+  {
     slug: 'indoor-rigid-signage',
     name: 'Indoor Rigid Signage',
     caption: 'Architectural graphics to guide, inform, and inspire.',

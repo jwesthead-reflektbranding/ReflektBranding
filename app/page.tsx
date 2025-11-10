@@ -33,7 +33,7 @@ const serviceSuites = [
   {
     name: 'Print & Promotional Materials',
     copy:
-      'Small-format print, signage, apparel, tradeshow displays, and promo pieces produced with precise color control and finish.'
+      'Small-format print, signage, apparel, tradeshow displays, and promo pieces produced with precise color control and finish, plus 3D custom printing for prototypes and premium giveaways.'
   },
   {
     name: 'Vehicle Graphics & Wraps',
