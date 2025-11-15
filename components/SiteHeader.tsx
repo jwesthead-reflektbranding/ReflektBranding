@@ -11,15 +11,12 @@ type NavigationItem = {
 }
 
 const navigation: NavigationItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/#about' },
-  { label: 'Why Us', href: '/#why-us' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Proof', href: '/#proof' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'HOME', href: '/' },
+  { label: 'SERVICES', href: '/#services' },
+  { label: 'BLOG', href: '/blog' },
+  { label: 'CONTACT', href: '/#contact' },
   {
-    label: 'Products',
+    label: 'PRODUCTS',
     href: '/products',
     submenu: products.map((product) => ({ label: product.name, href: `/products/${product.slug}` }))
   }
@@ -72,6 +69,9 @@ export default function SiteHeader({ cta = true }: SiteHeaderProps) {
           </ul>
         </nav>
         <div className="site-header-actions">
+          <Link href="/3d-shop" className="button button-outline">
+            THE 3D SHOP
+          </Link>
           {cta ? (
             <Link href="/#contact" className="button">
               Begin a project

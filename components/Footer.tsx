@@ -6,14 +6,8 @@ const primaryLinks = [
   { label: 'Why Us', href: '/#why-us' },
   { label: 'Services', href: '/#services' },
   { label: 'Proof', href: '/#proof' },
-  { label: 'Blog', href: '/blog' }
-]
-
-const serviceLinks = [
-  { label: 'Brand Strategy', href: '/#services' },
-  { label: 'Digital & Web', href: '/products' },
-  { label: 'Experiential', href: '/products' },
-  { label: 'Print Production', href: '/products' }
+  { label: 'Blog', href: '/blog' },
+  { label: 'Products', href: '/products' }
 ]
 
 const legalLinks = [
@@ -66,16 +60,6 @@ export default function Footer() {
             <p className="footer-heading">Company</p>
             <ul>
               {primaryLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}>{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="footer-column">
-            <p className="footer-heading">Services</p>
-            <ul>
-              {serviceLinks.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>{link.label}</Link>
                 </li>
