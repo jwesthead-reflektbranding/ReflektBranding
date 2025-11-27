@@ -5,7 +5,9 @@ const PLACEHOLDER_IMAGE = '/3d-products/reflekt-coming-soon.svg'
 const PRODUCT_IMAGE_MAP: Record<string, string> = {
   'RB-CAS-MFH-1': '/3d-products/Cascade Mini Football Helmet.png',
   'RB-CAS-HC-1': '/3d-products/Cascade Hype Chain.png',
-  'RB-BRO-HC-1': '/3d-products/Brownsburg Bulldogs Hype Chain.png'
+  'RB-BRO-HC-1': '/3d-products/Brownsburg Bulldogs Hype Chain.png',
+  'RB-CAS-KC-1': '/3d-products/Cascade - Key Chain w: Pendant.png',
+  'RB-PLA-KC-1': '/3d-products/Plainfield - Key Chain w: Pendant RB-PLA-KC-1.png'
 }
 
 export type StoreCatalogProduct = {
