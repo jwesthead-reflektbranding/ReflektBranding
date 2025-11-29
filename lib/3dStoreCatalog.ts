@@ -7,7 +7,9 @@ const PRODUCT_IMAGE_MAP: Record<string, string> = {
   'RB-CAS-HC-1': '/3d-products/Cascade Hype Chain.png',
   'RB-BRO-HC-1': '/3d-products/Brownsburg Bulldogs Hype Chain.png',
   'RB-CAS-KC-1': '/3d-products/Cascade - Key Chain w: Pendant.png',
-  'RB-PLA-KC-1': '/3d-products/Plainfield - Key Chain w: Pendant RB-PLA-KC-1.png'
+  'RB-PLA-HC-1': '/3d-products/Plainfield Quakers - Hype Chain w: Pendant (Shield).png',
+  'RB-PLA-KC-1': '/3d-products/Plainfield Quakers - Key Chain w: Pendant (Shield).png',
+  'RB-PLA-KC-6': '/3d-products/Plainfield Quakers - Key Chain w: Pendant (Ball Man).png'
 }
 
 export type StoreCatalogProduct = {
