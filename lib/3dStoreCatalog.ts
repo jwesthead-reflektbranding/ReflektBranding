@@ -6,8 +6,12 @@ const PRODUCT_IMAGE_MAP: Record<string, string> = {
   'RB-CAS-MFH-1': '/3d-products/Cascade Mini Football Helmet.png',
   'RB-CAS-HC-1': '/3d-products/Cascade Hype Chain.png',
   'RB-BRO-HC-1': '/3d-products/Brownsburg Bulldogs Hype Chain.png',
+  'RB-BRO-MFH-1': '/3d-products/Brownsburg Bulldogs Mini Football Helmet.png',
+  'Brownsburg Mini Football Helmet': '/3d-products/Brownsburg Bulldogs Mini Football Helmet.png',
   'RB-CAS-KC-1': '/3d-products/Cascade - Key Chain w: Pendant.png',
   'RB-PLA-HC-1': '/3d-products/Plainfield Quakers - Hype Chain w: Pendant (Shield).png',
+  'RB-PLA-MFH-1': '/3d-products/Plainfield Quakers Mini Football Helmet.png',
+  'Plainfield Mini Football Helmet': '/3d-products/Plainfield Quakers Mini Football Helmet.png',
   'RB-PLA-KC-1': '/3d-products/Plainfield Quakers - Key Chain w: Pendant (Shield).png',
   'RB-PLA-KC-6': '/3d-products/Plainfield Quakers - Key Chain w: Pendant (Ball Man).png'
 }
