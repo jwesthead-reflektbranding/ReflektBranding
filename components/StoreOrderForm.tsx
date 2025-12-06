@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useMemo, useState, type ChangeEvent, type FormEvent } from 'react'
 
-import type { StoreCatalogCategory, StoreCatalogProduct } from '@/lib/3dStoreCatalog'
+import type { StoreCatalogCategory, StoreCatalogProduct, StoreCatalogProductWithCategory } from '@/lib/3dStoreCatalog'
 import { US_STATES } from '@/lib/usStates'
 
 type ProductLine = {
@@ -36,6 +36,7 @@ type FormState = {
 type StoreOrderFormProps = {
   catalog: StoreCatalogCategory[]
   brands: string[]
+  queuedProduct?: { product: StoreCatalogProductWithCategory; requestId: number } | null
 }
 
 function buildInitialFormState(): FormState {
@@ -56,7 +57,7 @@ function buildInitialFormState(): FormState {
   }
 }
 
-export default function StoreOrderForm({ catalog, brands }: StoreOrderFormProps) {
+export default function StoreOrderForm({ catalog, brands, queuedProduct }: StoreOrderFormProps) {
   const defaultBrand = brands[0] ?? 'Reflekt Originals'
 
   function createProductLine(brand = defaultBrand, categoryName?: string): ProductLine {
@@ -80,13 +81,24 @@ export default function StoreOrderForm({ catalog, brands }: StoreOrderFormProps)
       category: resolvedCategory || '',
       product: product?.name ?? '',
       sku: product?.sku ?? '',
-      quantity: '',
+      quantity: '1',
       price: product?.priceDisplay ?? ''
     }
   }
 
+  function createProductLineFromCatalogProduct(product: StoreCatalogProductWithCategory): ProductLine {
+    return {
+      brand: product.brand || defaultBrand,
+      category: product.category || '',
+      product: product.name,
+      sku: product.sku ?? '',
+      quantity: '1',
+      price: product.priceDisplay ?? ''
+    }
+  }
+
   const [formState, setFormState] = useState<FormState>(() => buildInitialFormState())
-  const [productLines, setProductLines] = useState<ProductLine[]>(() => [createProductLine()])
+  const [productLines, setProductLines] = useState<ProductLine[]>(() => [])
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [showSuccessModal, setShowSuccessModal] = useState(false)
@@ -106,7 +118,17 @@ export default function StoreOrderForm({ catalog, brands }: StoreOrderFormProps)
     return () => clearTimeout(timeout)
   }, [showSuccessModal])
 
+  useEffect(() => {
+    if (!queuedProduct) return
+    resetSubmissionState()
+    setProductLines((prev) => [...prev, createProductLineFromCatalogProduct(queuedProduct.product)])
+  }, [queuedProduct])
+
   const isDisabled = useMemo(() => {
+    if (productLines.length === 0) {
+      return true
+    }
+
     const missingContact =
       !formState.name ||
       !formState.email ||
@@ -258,7 +280,7 @@ export default function StoreOrderForm({ catalog, brands }: StoreOrderFormProps)
 
       setSubmitStatus('success')
       setFormState(buildInitialFormState())
-      setProductLines([createProductLine()])
+      setProductLines([])
       setShowSuccessModal(true)
     } catch (error) {
       console.error('Failed to submit store order', error)
@@ -375,7 +397,7 @@ export default function StoreOrderForm({ catalog, brands }: StoreOrderFormProps)
           </div>
         ))}
         <button type="button" className="button button-outline store-order-add" onClick={addProductLine}>
-          Add another product line
+          Add a product line
         </button>
       </div>
 

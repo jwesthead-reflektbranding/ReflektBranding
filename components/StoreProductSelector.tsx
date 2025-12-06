@@ -8,9 +8,10 @@ import type { StoreCatalogProductWithCategory } from '@/lib/3dStoreCatalog'
 type StoreProductSelectorProps = {
   products: StoreCatalogProductWithCategory[]
   brands: string[]
+  onAddToOrder?: (product: StoreCatalogProductWithCategory) => void
 }
 
-export default function StoreProductSelector({ products, brands }: StoreProductSelectorProps) {
+export default function StoreProductSelector({ products, brands, onAddToOrder }: StoreProductSelectorProps) {
   const brandOptions = brands.length ? brands : buildBrandList(products)
   const defaultBrand = brandOptions[0] ?? products[0]?.brand ?? ''
   const defaultCategory = getFirstCategory(defaultBrand, products)
@@ -39,6 +40,7 @@ export default function StoreProductSelector({ products, brands }: StoreProductS
   }, [matchedProducts, selectedProductName])
 
   const activeProduct = matchedProducts.find((product) => product.name === selectedProductName)
+  const disableAddToOrder = !onAddToOrder || !activeProduct
 
   function handleBrandChange(event: ChangeEvent<HTMLSelectElement>) {
     setSelectedBrand(event.target.value)
@@ -50,6 +52,11 @@ export default function StoreProductSelector({ products, brands }: StoreProductS
 
   function handleProductChange(event: ChangeEvent<HTMLSelectElement>) {
     setSelectedProductName(event.target.value)
+  }
+
+  function handleAddToOrder() {
+    if (!activeProduct || !onAddToOrder) return
+    onAddToOrder(activeProduct)
   }
 
   return (
@@ -118,6 +125,9 @@ export default function StoreProductSelector({ products, brands }: StoreProductS
             <p className="store-card-note">
               * Product images are for visual reference, final product may have slight variation *
             </p>
+            <button type="button" className="button" onClick={handleAddToOrder} disabled={disableAddToOrder}>
+              Add to order
+            </button>
           </div>
         </article>
       ) : (

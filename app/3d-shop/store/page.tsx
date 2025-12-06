@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-import StoreOrderForm from '@/components/StoreOrderForm'
-import StoreProductSelector from '@/components/StoreProductSelector'
+import StoreOrderExperience from '@/components/StoreOrderExperience'
 import { loadStoreCatalog } from '@/lib/3dStoreCatalog'
 
 export const metadata: Metadata = {
@@ -30,21 +29,7 @@ export default function ThreeDProductStorePage() {
         </div>
       </section>
 
-      <section className="store-grid-section">
-        <div className="container">
-          <StoreProductSelector products={flatProducts} brands={brands} />
-        </div>
-      </section>
-
-      <section className="store-order-section">
-        <div className="container">
-          <div className="store-order-heading">
-            <h2>Send us your order details</h2>
-            <p>Provide quantities, deadlines, and any special finishing notes. We will confirm pricing and send an invoice.</p>
-          </div>
-          <StoreOrderForm catalog={catalog} brands={brands} />
-        </div>
-      </section>
+      <StoreOrderExperience catalog={catalog} brands={brands} products={flatProducts} />
     </main>
   )
 }
